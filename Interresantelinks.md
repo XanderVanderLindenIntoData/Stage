@@ -21,3 +21,9 @@ Welke Benchmark zal ik gebruiken?
 
 waar huidige llm's tekortkomen
 <https://www.snowflake.com/en/engineering-blog/cortex-analyst-text-to-sql-accuracy-bi/>
+
+BIRD Benchmark: mijn grootste leiddraad voor een goede performance
+<https://github.com/AlibabaResearch/DAMO-ConvAI/tree/main/bird#fine-tuning-ft>
+
+Voorbeeld uitgewerkte pipeline
+<https://googlecloudplatform.github.io/nl2sql-studio/>
