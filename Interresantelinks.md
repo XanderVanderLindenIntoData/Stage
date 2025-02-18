@@ -21,3 +21,24 @@ Welke Benchmark zal ik gebruiken?
 
 waar huidige llm's tekortkomen
 <https://www.snowflake.com/en/engineering-blog/cortex-analyst-text-to-sql-accuracy-bi/>
+
+BIRD Benchmark: mijn grootste leiddraad voor een goede performance
+<https://github.com/AlibabaResearch/DAMO-ConvAI/tree/main/bird#fine-tuning-ft>
+
+Voorbeeld uitgewerkte pipeline
+<https://googlecloudplatform.github.io/nl2sql-studio/>
+
+Production AI applicaties
+<https://launchpad.datalumina.com/>
+
+17 python libraries
+<https://www.youtube.com/watch?v=p4G0coRey9w>
+
+Voorbeeldapplicatie texttoSQL
+<https://www.youtube.com/watch?v=klHZTIzk2Hk>
+
+3 architecturele patronen texttoSQL
+<https://www.youtube.com/watch?v=vdD7KQx7gzs>
+
+Voor preprocessing van de input (2024 paper met )
+<https://github.com/bigbigwatermalon/C3SQL/blob/master/src/preprocessing.py>
