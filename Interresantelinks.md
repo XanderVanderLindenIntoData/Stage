@@ -40,5 +40,8 @@ Voorbeeldapplicatie texttoSQL
 3 architecturele patronen texttoSQL
 <https://www.youtube.com/watch?v=vdD7KQx7gzs>
 
-Voor preprocessing van de input (2024 paper met )
+Voor preprocessing van de input (2024 paper met zero shot )
 <https://github.com/bigbigwatermalon/C3SQL/blob/master/src/preprocessing.py>
+
+Zero shot with chatgpt uitgewerkt project volledig python
+<https://github.com/bigbigwatermalon/C3SQL>
