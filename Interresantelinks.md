@@ -45,3 +45,9 @@ Voor preprocessing van de input (2024 paper met zero shot )
 
 Zero shot with chatgpt uitgewerkt project volledig python
 <https://github.com/bigbigwatermalon/C3SQL>
+
+Goede langchain tutorial
+<https://www.youtube.com/watch?v=fss6CrmQU2Y&t=648s>
+
+Ongeveer zelfde tutorial via De lanchain documentatie
+<https://python.langchain.com/docs/tutorials/sql_qa/>
