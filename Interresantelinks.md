@@ -51,3 +51,6 @@ Goede langchain tutorial
 
 Ongeveer zelfde tutorial via De lanchain documentatie
 <https://python.langchain.com/docs/tutorials/sql_qa/>
+
+Prompting Strategies,Query Checking and working with a large database
+<https://python.langchain.com/v0.2/docs/tutorials/sql_qa/>
