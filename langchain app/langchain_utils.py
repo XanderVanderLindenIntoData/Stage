@@ -13,13 +13,22 @@ llm = ChatOpenAI(model="gpt-4o", temperature=0)
 execute_query = QuerySQLDatabaseTool(db=db)
 
 def clean_sql_output(sql_output: str) -> str:
-    """Remove markdown-style triple backticks and 'sql' from output."""
+    """Remove markdown-style triple backticks and 'sql' from the output."""
     if isinstance(sql_output, str):  # Ensure it's a string before cleaning
         cleaned_sql = sql_output.strip()
-        # Remove markdown syntax for SQL code if present
-        cleaned_sql = cleaned_sql.removeprefix("```sql").removeprefix("``` ").removesuffix("``` ").strip()
+        
+        # Remove any variations of markdown SQL formatting
+        if cleaned_sql.startswith("```sql"):
+            cleaned_sql = cleaned_sql[6:].strip()  # Remove '```sql' and leading space if any
+        elif cleaned_sql.startswith("```"):
+            cleaned_sql = cleaned_sql[3:].strip()  # Remove '```' if it's not '```sql'
+
+        if cleaned_sql.endswith("```"):
+            cleaned_sql = cleaned_sql[:-3].strip()  # Remove trailing '```'
+
         return cleaned_sql
-    return ""  # Return an empty string or handle the error case as needed
+
+    return ""  # Return an empty string if the input is not a valid string
 
 
 # Query execution chain
