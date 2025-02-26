@@ -29,7 +29,7 @@ pip install -r requirments.txt
 
 ## requirements
 
-- **Python3.x** 
+- **Python3.x**
 - **Pydantic**
 - **Langchain**
 
@@ -52,3 +52,12 @@ example:
 
   Local URL: <http://localhost:8501>
   Network URL: <http://10.150.136.22:8501>
+
+## Sources
+
+Interessantelinks markdown file
+6 categorieën aan belangrijke sources gebruikt bij dit project
+
+Sources for application code
+<https://python.langchain.com/docs/tutorials/sql_qa/>
+<https://blog.futuresmart.ai/mastering-natural-language-to-sql-with-langchain-nl2sql>

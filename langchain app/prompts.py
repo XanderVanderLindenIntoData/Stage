@@ -25,12 +25,17 @@ validation_prompt = ChatPromptTemplate.from_messages(
 ).partial(dialect=db_dialect)
 
 # Answer Rephrasing Prompt
-answer_prompt_template = """Given the following user question, SQL query, and SQL result, provide a clear and concise answer:
+answer_prompt_template = """Given the following user question, SQL query, and SQL result, provide a clear and well-formatted natural language answer. Include the sql query and then natural language answer.
 
 User Question: {question}
 SQL Query: {query}
 SQL Result: {result}
 
-Provide the final answer in natural language."""
+Format the answer as follows:
+
+SQL Query: the query that you used
+sql query result: the result of the query
+Natural Language Answer: the answer to the user question
+"""
 
 answer_prompt = ChatPromptTemplate.from_template(answer_prompt_template)

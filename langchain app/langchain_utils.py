@@ -4,7 +4,7 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_community.tools import QuerySQLDatabaseTool
 from operator import itemgetter
 from table_details import extract_relevant_tables, db
-from prompts import validation_prompt
+from prompts import validation_prompt,answer_prompt
 from langchain_openai import ChatOpenAI
 
 llm = ChatOpenAI(model="gpt-4o", temperature=0)
@@ -36,14 +36,12 @@ query_chain = create_sql_query_chain(llm, db)
 extract_tables_chain = RunnableLambda(lambda x: x["question"]) | RunnableLambda(extract_relevant_tables)
 tablequerychain = RunnablePassthrough.assign(table_names_to_use=extract_tables_chain) | query_chain
 validation_chain = validation_prompt | llm | StrOutputParser()
-full_chain = tablequerychain | validation_chain
+rephrase_answer = answer_prompt | llm | StrOutputParser()
+full_chain = tablequerychain | validation_chain 
 
-answer_prompt = """Given the following user question, SQL query, and SQL result, answer the user question.
+answer_prompt_template = """{response}
+"""
 
-Question: {question}
-SQL Query: {query}
-SQL Result: {result}
-Answer:"""
 
 def execute_chain(question: str, evidence: str = "") -> str:
     """Executes the LangChain pipeline and returns the final answer."""
@@ -61,4 +59,6 @@ def execute_chain(question: str, evidence: str = "") -> str:
     result = execute_query.invoke(cleaned_query)
     print(f"Query Result: {result}")
     
-    return answer_prompt.format(question=question, query=cleaned_query, result=result)
+    response = rephrase_answer.invoke({"question": question, "query": cleaned_query, "result": result})
+    
+    return answer_prompt_template.format(question=question, query=cleaned_query, result=result,response = response)
