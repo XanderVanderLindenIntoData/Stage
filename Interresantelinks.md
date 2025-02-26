@@ -36,6 +36,9 @@ Voorbeeldapplicatie texttoSQL
 Goede langchain tutorial
 <https://www.youtube.com/watch?v=fss6CrmQU2Y&t=648s>
 
+Extra yt tutorial
+<https://www.youtube.com/watch?v=klHZTIzk2Hk&t=796s>
+
 Welke Benchmark zal ik gebruiken?
 <https://github.com/HKUSTDial/NL2SQL_Handbook/blob/main/chapter/Benchmark.md>
 
