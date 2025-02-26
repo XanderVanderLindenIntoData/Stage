@@ -7,11 +7,12 @@ Basic NL2SQL apllication. designed to generates sql queries on a sample database
 
 ![alt text](image.png)
 
-main.py = Streamlit interface runnen
-Prompts.py = prompt templates gebruikt om de agents aan te roepen
-table_details = gebruikt om dynamisch tabellen op te roepen uit de db
-langchain_utils.py = gebruikt voor de chains te definieren (oproepen naar llm logica)
-examples.py = implementatie few-shot prompting
+**main.py** = Streamlit interface runnen
+**Prompts.py** = prompt templates gebruikt om de agents aan te roepen
+**table_details** = gebruikt om dynamisch tabellen op te roepen uit de db
+**langchain_utils.py** = gebruikt voor de chains te definieren (oproepen naar llm logica)
+**examples.py** = implementatie few-shot prompting
+**vectorization.py** = Script om de huidige databank om te zetten naar vectordatabank
 
 ## bird notebook
 
