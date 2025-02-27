@@ -3,15 +3,25 @@ from langchain_community.utilities.sql_database import SQLDatabase
 from langchain.chains.openai_tools import create_extraction_chain_pydantic
 from langchain_openai import ChatOpenAI
 from pydantic.v1 import BaseModel, Field
+from urllib.parse import quote_plus
+from dotenv import load_dotenv
 import os
 
-# Load environment variables
-from dotenv import load_dotenv
+# Load environment variables from the .env file
 load_dotenv()
 
-db = SQLDatabase.from_uri(
-    f"postgresql://{os.getenv('DB_USER')}:{os.getenv('DB_PASSWORD')}@{os.getenv('DB_HOST')}/{os.getenv('DB_NAME')}"
-)
+# Access variables using os.getenv()
+db_name = os.getenv("DB_NAME")
+db_user = os.getenv("DB_USER")
+db_password = os.getenv("DB_PASSWORD")
+db_host = os.getenv("DB_HOST")
+db_port = os.getenv("DB_PORT")
+
+encoded_password = quote_plus(db_password)
+
+db_uri = f"postgresql://{db_user}:{encoded_password}@{db_host}:{db_port}/{db_name}"
+db = SQLDatabase.from_uri(db_uri)
+print(db_uri)  # Debugging
 
 llm = ChatOpenAI(model="gpt-4o", temperature=0)
 

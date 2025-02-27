@@ -54,6 +54,9 @@ pdf van de huidige nummer 1
 
 ## artikels
 
+Semantische laag
+<https://www.atscale.com/glossary/semantic-layer/#:~:text=The%20semantic%20layer%20is%20a,the%20business%20user%20to%20understand.>
+
 ## applicaties(oplossing)
 
 Production AI applicaties
@@ -69,3 +72,4 @@ Ongeveer zelfde tutorial via De lanchain documentatie
 
 Prompting Strategies,Query Checking and working with a large database
 <https://python.langchain.com/v0.2/docs/tutorials/sql_qa/>
+
